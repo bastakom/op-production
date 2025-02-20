@@ -1,3 +1,3 @@
-export const Packages = ({ paket, destinations }: any) => {
+export const Packages = ({ destinations }: any) => {
   return <div>hej</div>;
 };

@@ -1,16 +1,19 @@
 import { Packages } from "@/components/packages";
-import { getAllDestinations } from "@/lib/get-all-destinations";
+import { getDestination } from "@/lib/get-destination";
 import { getData } from "@/lib/get-data";
 
 const page = async ({ params }: { params: { slug: string } }) => {
   const pathname = params.slug;
   console.log(pathname);
-  const paket = await getData(pathname);
-  const destinations = await getAllDestinations(pathname);
+  //const paket = await getData(pathname);
+
+  const destination = await getDestination(pathname);
+  console.log(destination.data.data.story);
 
   return (
     <div>
-      <Packages paket={paket?.data?.data?.story} />
+      {" "}
+      <Packages destination={destination.data.data.story} />{" "}
     </div>
   );
 };
