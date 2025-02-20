@@ -1,18 +1,26 @@
 import { getStoryblokApi } from "@storyblok/react";
 import { redirect } from "next/navigation";
-export async function getAllDestinations() {
-  const language = process.env.STORYBLOCK_LANG || "en";
+
+export async function getDestination(slug: string) {
+  const lang = process.env.STORYBLOCK_LANG || "en";
   let sbParams = {
     version: "draft" as const,
-    language: language,
-    starts_with: "destinationer",
+    language: lang,
   };
+
   const client = getStoryblokApi();
+  const slugName = slug || "default-slug";
+
   try {
-    const data = await client.get(`cdn/stories`, sbParams);
+    const data = await client.get(
+      `cdn/stories/destinationer/${slugName}`,
+      sbParams
+    );
+
     if (!data) {
       throw new Error("Not Found");
     }
+
     return { data };
   } catch (error: any) {
     if (error.response && error.response.status === 500) {
