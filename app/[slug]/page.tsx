@@ -6,8 +6,6 @@ const Page = async ({ params }: { params: Params }) => {
   const pathname = (await params).slug;
   const slugName = pathname === undefined ? `home` : pathname;
   const story = await getData("home");
-
-  console.log(story);
   return <StoryblokStory story={story} />;
 };
 
