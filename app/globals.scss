@@ -18,16 +18,57 @@ h1 {
   text-transform: uppercase;
 }
 
+h2 {
+  color: #004e70;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 500;
+}
+
 h3 {
   font-size: 18px;
 }
 
+div {
+  p {
+    font-size: 15px;
+    line-height: 1.5rem;
+  }
+  i {
+    span {
+      font-weight: 200;
+    }
+  }
+}
 /* Hero-section */
 .hero-text {
   font-weight: 700;
   width: 40%;
   line-height: 2rem;
   text-align: center;
+}
+
+.imgSection:hover {
+  transform: scale(1.1);
+}
+
+.imgWrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.imgSection {
+  transition: transform 0.3s ease-in-out;
+}
+
+.imageLeft {
+  order: 2;
+}
+
+.buttonRounded {
+  padding: 20px 30px;
+  border: 2px solid #004e70;
+  border-radius: 100px;
 }
 
 /* Footer */
