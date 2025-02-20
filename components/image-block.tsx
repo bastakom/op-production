@@ -9,7 +9,7 @@ export const ImageBlock = ({ blok }: any) => {
           blok.image_left && "imageLeft"
         }`}
       >
-        <h2>{blok.title}</h2>
+        <h2 className="mb-2">{blok.title}</h2>
         <div>{render(blok.content)}</div>
       </div>
       <div className="imgWrapper">

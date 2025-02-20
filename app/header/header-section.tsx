@@ -6,11 +6,13 @@ export const HeaderSection = ({ settings }: any) => {
   return (
     <header className="flex flex-row p-6 justify-evenly items-center">
       <div className="w-[30%]">
-        <img
-          src={settings.logo.filename}
-          alt={settings.logo.alt}
-          className="w-[100px]"
-        />
+        <Link href="/home">
+          <img
+            src={settings.logo.filename}
+            alt={settings.logo.alt}
+            className="w-[100px]"
+          />
+        </Link>
       </div>
 
       <nav className="flex justify-center flex-row gap-8 uppercase">
