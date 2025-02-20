@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.cdnfonts.com/css/sweet-sans-pro");
+
+* {
+  font-family: "Sweet Sans Pro", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+/* Hero-section */
+.hero-text {
+  font-weight: 700;
+  width: 40%;
+  line-height: 2rem;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  background-color: #004e70;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
