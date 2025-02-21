@@ -1,5 +1,7 @@
 import { create } from "zustand";
 
+//Open är förberedd till hamburgermeny, används ingenstans just nu.
+
 interface IsOpenMenu {
   open: boolean;
   setOpen: (value: boolean) => void;
