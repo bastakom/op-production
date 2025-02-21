@@ -71,6 +71,21 @@ div {
   border-radius: 100px;
 }
 
+.destination-content {
+  p {
+    &::before {
+      content: "✓";
+      top: 2px;
+      background-color: #052f63;
+      color: white;
+      padding: 2px 6px;
+      border-radius: 100%;
+      font-size: 10px;
+      margin-right: 10px;
+    }
+  }
+}
+
 /* Footer */
 footer {
   background-color: #004e70;
