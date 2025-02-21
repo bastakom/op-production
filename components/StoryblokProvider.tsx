@@ -7,6 +7,7 @@ import { Tiles } from "./tiles";
 import { ImageBlock } from "./image-block";
 import { Gallery } from "./gallery";
 import { ImageNavigationBlock } from "./image-navigation-block";
+import { FilterDestinations } from "./filter-destinations";
 
 storyblokInit({
   components: {
@@ -16,6 +17,7 @@ storyblokInit({
     image_block: ImageBlock,
     gallery: Gallery,
     image_navigation_block: ImageNavigationBlock,
+    filter_destinations: FilterDestinations,
   },
 
   enableFallbackComponent: true,
