@@ -7,9 +7,7 @@ export const Hero = ({ blok }: any) => {
     <div {...storyblokEditable}>
       <div
         className={`absolute w-[100%] bg-[#0a0a0a]  z-10 ${
-          blok.video
-            ? "lg:h-[90%] opacity-50"
-            : "h-[56.5%] lg:h-[60%] opacity-30"
+          blok.video ? "h-[90vh] opacity-50" : "h-[56.5%] lg:h-[60%] opacity-30"
         }`}
       ></div>
 
@@ -36,7 +34,7 @@ export const Hero = ({ blok }: any) => {
         </div>
       )}
       <div
-        className={`absolute top-1/2 text-white flex flex-col lg:justify-center lg:items-center lg:gap-4 z-20 text-center lg:text-start ${
+        className={`absolute top-[30%] lg:top-[30%] text-white flex flex-col lg:justify-center lg:items-center lg:gap-4 z-20 text-center lg:text-start ${
           !blok.video && "left-1/2 transform -translate-x-1/2 -translate-y-1/2"
         }`}
       >
