@@ -25,9 +25,11 @@ export const Hero = ({ blok }: any) => {
         </div>
       ) : (
         <div className="relative w-full h-[60vh]">
-          <img
+          <Image
             src={blok.hero_image.filename}
+            fill
             className="object-cover w-full h-full"
+            alt={blok.hero_image.alt}
           />
         </div>
       )}

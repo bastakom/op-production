@@ -12,11 +12,12 @@ export const ImageBlock = ({ blok }: any) => {
         <h2 className="mb-2">{blok.title}</h2>
         <div>{render(blok.content)}</div>
       </div>
-      <div className="imgWrapper">
-        <img
+      <div className="imgWrapper relative w-[100%] h-[506px]">
+        <Image
           src={blok.image.filename}
           alt={blok.image.alt}
-          className="w-[100%] h-[506px] imgSection"
+          fill
+          className="object-cover imgSection"
         />
       </div>
     </div>
