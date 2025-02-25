@@ -11,7 +11,7 @@ export const DestinationCard = ({ item, boolean }: any) => {
         key={item.content._id}
       >
         <div>
-          <div className="bg-white rounded-lg shadow-lg mb-4 lg:mb-0">
+          <div className="bg-white rounded-lg shadow-lg mb-4 lg:mb-0 min-h-[88vh] max-h-[94vh]">
             <div
               className={`relative  ${
                 boolean ? " h-[34vh]" : "lg:w-[21.6vw] h-[40vh]"
