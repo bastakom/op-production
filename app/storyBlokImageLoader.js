@@ -1,5 +1,5 @@
-const storyblokImageLoader = ({ src, width, quality }) => {
-  return `${src}/m/${width}x0/filters:quality(${quality || 75})`;
+const StoryblokImageLoader = ({ src, width }) => {
+  return `${src}/m/${width}`;
 };
 
-export default storyblokImageLoader;
+export default StoryblokImageLoader;

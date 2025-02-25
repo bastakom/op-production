@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { render } from "storyblok-rich-text-react-renderer";
+import StoryBlokImageLoader from "../../app/storyBlokImageLoader.js";
 
 export const DestinationCard = ({ item, boolean }: any) => {
   return (
@@ -13,7 +14,7 @@ export const DestinationCard = ({ item, boolean }: any) => {
           <div className="bg-white rounded-lg shadow-lg mb-4 lg:mb-0">
             <div
               className={`relative  ${
-                boolean ? " h-[34vh]" : "lg:w-[28.6vw] h-[44vh]"
+                boolean ? " h-[34vh]" : "lg:w-[21.6vw] h-[40vh]"
               } overflow-hidden`}
             >
               {item.content.show_overlay_text && !boolean && (
@@ -21,11 +22,13 @@ export const DestinationCard = ({ item, boolean }: any) => {
                   {item.content.overlay_text}
                 </div>
               )}
+
               {item.content.future_image.filename !== "" && (
-                <img
-                  src={item.content.future_image.filename}
-                  alt={item.content.future_image.alt}
-                  className="object-cover transition-transform duration-500 ease-in-out transform hover:scale-110 fill"
+                <Image
+                  src={item?.content?.future_image.filename}
+                  alt={item?.content?.future_image.alt}
+                  fill
+                  className="object-cover transition-transform duration-500 ease-in-out transform hover:scale-110 "
                 />
               )}
             </div>

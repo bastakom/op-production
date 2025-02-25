@@ -6,7 +6,7 @@ export const FilterDestinations = ({ blok, allDestinations }: any) => {
   });
 
   return (
-    <div className="w-[90%] mx-auto">
+    <div className="w-[90%] mx-auto h-[110vh] flex flex-col justify-center">
       <h2 className="text-center text-[30px] uppercase font-normal mb-4">
         {blok.section_title}
       </h2>
