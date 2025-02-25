@@ -1,6 +1,7 @@
 "use client";
 
 import { Socials } from "@/components/utils/socials/socials";
+import Image from "next/image";
 import Link from "next/link";
 
 export const FooterSection = ({ settings }: any) => {
@@ -33,15 +34,19 @@ export const FooterSection = ({ settings }: any) => {
       </div>
 
       <div className="flex justify-end w-[85vw]">
-        <div className="flex flex-row relative w-[100px] h-[100px]  ">
-          <img
+        <div className="flex flex-row relative w-[100px] h-[100px]">
+          <Image
             src={settings.swish_logo.filename}
-            className="object-contain fill "
+            width={100}
+            height={100}
+            className="object-contain"
             alt={settings.swish_logo.alt}
           />
-          <img
+          <Image
             src={settings.izettle_logo.filename}
-            className="object-contain fill "
+            width={100}
+            height={100}
+            className="object-contain"
             alt={settings.izettle_logo.alt}
           />
         </div>

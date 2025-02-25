@@ -29,9 +29,10 @@ export const Gallery = ({ blok }: any) => {
                   height: "300px",
                 }}
               >
-                <img
+                <Image
                   src={el.image.filename}
-                  className="object-cover w-full h-full transition-all duration-300 ease-in-out fill"
+                  fill
+                  className="object-cover w-full h-full transition-all duration-300 ease-in-out"
                   alt={el.image.alt}
                 />
               </div>

@@ -1,16 +1,18 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 export const HeaderSection = ({ settings }: any) => {
   return (
     <header className="flex flex-row p-6 justify-evenly items-center">
-      <div className="w-[30%]">
+      <div className="relative w-[100px] h-[100px]">
         <Link href="/home">
-          <img
+          <Image
             src={settings.logo.filename}
             alt={settings.logo.alt}
-            className="w-[100px]"
+            fill
+            className="object-contain "
           />
         </Link>
       </div>

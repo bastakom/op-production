@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export const ImageNavigationBlock = ({ blok }: any) => {
@@ -9,11 +10,12 @@ export const ImageNavigationBlock = ({ blok }: any) => {
           <Link
             href={el.link.cached_url}
             key={el._uid}
-            className="relative w-full h-[400px] shadow-lg hover:shadow-xl transition-shadow duration-300"
+            className="relative w-[400px] h-[400px] shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
-            <img
+            <Image
               src={el.image.filename}
               alt={el.image.alt}
+              fill
               className="object-cover w-full h-full "
             />
             <h3 className="absolute bottom-0 w-full text-center text-[21px] underline bg-white py-4">
