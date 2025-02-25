@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export const FooterSection = ({ settings }: any) => {
   return (
-    <footer className="grid grid-cols-3  p-24 pb-4">
+    <footer className="text-center lg:text-start grid lg:grid-cols-3 p-10 lg:p-24 lg:pb-4">
       <div>
         {settings.contact.map((el: any) => (
           <div key={el._uid} className="flex flex-col gap-4 ">
@@ -19,7 +19,7 @@ export const FooterSection = ({ settings }: any) => {
         ))}
       </div>
 
-      <div className="flex flex-col gap-4">
+      <div className="mt-10 lg:mt-0 flex flex-col gap-4">
         <h3>{settings.terms_title}</h3>
         {settings.terms_links.map((el: any) => (
           <Link href={el.link.cached_url} key={el._uid} className="text-[14px]">
@@ -27,14 +27,14 @@ export const FooterSection = ({ settings }: any) => {
           </Link>
         ))}
       </div>
-      <div className="flex flex-row gap-4">
+      <div className="mt-10 lg:mt-0 flex justify-center lg:justify-start flex-row gap-4">
         {settings.some_links.map((el: any) => (
           <Socials props={el} key={el._uid} />
         ))}
       </div>
 
-      <div className="flex justify-end w-[85vw]">
-        <div className="flex flex-row relative w-[100px] h-[100px]">
+      <div className="mt-4 justify-center lg:mt-0 flex lg:justify-end lg:w-[85vw] w-[100%]">
+        <div className="flex flex-row relative justify-center lg:justify-start w-[100px] h-[100px]">
           <Image
             src={settings.swish_logo.filename}
             width={100}

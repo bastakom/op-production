@@ -43,9 +43,8 @@ div {
 /* Hero-section */
 .hero-text {
   font-weight: 700;
-  width: 40%;
+  width: 100%;
   line-height: 2rem;
-  text-align: center;
 }
 
 .imgSection:hover {
@@ -88,8 +87,8 @@ div {
 
 .terms-content {
   ul {
-    list-style-type: disc; /* Lägg till diskpunkter */
-    padding-left: 20px; /* Lägg till lite vänstermarginal för att skjuta ut punkterna */
+    list-style-type: disc;
+    padding-left: 20px;
   }
 }
 
@@ -98,6 +97,16 @@ footer {
   background-color: #004e70;
   color: white;
   display: flex;
-  justify-content: flex-start;
+
   width: 100%;
+}
+
+@media screen and (min-width: 1020px) {
+  .hero-text {
+    font-weight: 700;
+    width: 40%;
+    line-height: 2rem;
+    text-align: center;
+    justify-content: flex-start;
+  }
 }
