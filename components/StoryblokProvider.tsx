@@ -8,6 +8,7 @@ import { ImageBlock } from "./image-block";
 import { Gallery } from "./gallery";
 import { ImageNavigationBlock } from "./image-navigation-block";
 import { FilterDestinations } from "./filter-destinations";
+import { TermsBlock } from "./terms-block";
 
 storyblokInit({
   components: {
@@ -18,6 +19,7 @@ storyblokInit({
     gallery: Gallery,
     image_navigation_block: ImageNavigationBlock,
     filter_destinations: FilterDestinations,
+    terms: TermsBlock,
   },
 
   enableFallbackComponent: true,
