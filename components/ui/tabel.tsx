@@ -1,39 +1,30 @@
-/* export const Tabel = ({ destination }: any) => {
-  console.log(destination);
-  return (
-    <div>
-      <table>
-        <caption>Omgång 1</caption>
-        <tbody>
-          <tr>
-            <th>Datum</th>
-            <th>Match</th>
-          </tr>
-          <tr>
-            <td>7 januari</td>
-            <td>MFF-DJURGÅRDEN</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  );
-};
- */
+import { BsPlusLg } from "react-icons/bs";
+import { useState } from "react";
 
 export const Tabel = ({ destination }: any) => {
-  console.log(destination);
+  const [openTable, setOpenTable] = useState(false);
+
+  const handleOpenTable = () => {
+    setOpenTable(!openTable);
+  };
 
   return (
     <div className="flex flex-col gap-5">
-      <div className="mx-auto w-[70%] justify-between">
+      <div
+        className="flex items-center mx-auto w-[70%] justify-between bg-[#f8f8f8] p-6 cursor-pointer"
+        onClick={() => handleOpenTable()}
+      >
         <h2 className=" text-[30px] font-normal normal-case ">
           {destination.title}
         </h2>
+        <BsPlusLg fontSize={30} color="#004e70" />
       </div>
       {destination.table_columns.map((column: any) => (
         <div
           key={column._uid}
-          className="grid grid-cols-2 w-[70%] mx-auto gap-4"
+          className={
+            openTable ? "grid grid-cols-2 w-[70%] mx-auto gap-4" : "hidden"
+          }
         >
           {column.field.map((fieldItem: any) => (
             <table key={fieldItem._uid}>

@@ -6,8 +6,6 @@ import { IoIosArrowDown } from "react-icons/io";
 import { useState } from "react";
 
 export const DestinationInfo = ({ destination }: any) => {
-  console.log(destination);
-
   const [openDropdown, setOpenDropdown] = useState(false);
 
   const handleDropdown = () => {
