@@ -38,7 +38,7 @@ export const Hero = ({ blok }: any) => {
           !blok.video && "left-1/2 transform -translate-x-1/2 -translate-y-1/2"
         }`}
       >
-        <h1>{blok.title}</h1>
+        <h1>{blok.hero_title}</h1>
         <div className="hero-text">{render(blok.content)}</div>
       </div>
     </div>
