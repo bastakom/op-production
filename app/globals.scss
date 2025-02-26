@@ -85,11 +85,62 @@ div {
   }
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  input,
+  select {
+    padding: 15px 20px;
+    border: 1px solid #cfcfcf;
+  }
+  textarea {
+    border: 1px solid #cfcfcf;
+    padding: 5px 5px;
+  }
+}
+
+input,
+select,
+textarea {
+  outline: none;
+  background-color: white;
+}
+
 .terms-content {
   ul {
     list-style-type: disc;
     padding-left: 20px;
   }
+}
+
+/*Table */
+
+table {
+  border: 2px solid black;
+}
+caption {
+  background-color: #004e70;
+  padding: 0.5rem;
+  color: white;
+}
+
+tbody {
+  height: 12vh;
+}
+td {
+  font-size: 14px;
+}
+th,
+td {
+  width: 50%;
+}
+th:first-of-type {
+  text-align: start;
+}
+th:last-of-type,
+td:last-of-type {
+  text-align: end;
 }
 
 /* Footer */
