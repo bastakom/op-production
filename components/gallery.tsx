@@ -35,6 +35,16 @@ export const Gallery = ({ blok }: any) => {
                   className="object-cover w-[100%] h-full transition-all duration-300 ease-in-out"
                   alt={el.image.alt}
                 />
+
+                {el.sublime && el.title && (
+                  <div className="absolute top-0 left-0 w-full h-full bg-[#004e70] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                )}
+                <div className="absolute top-0 left-0 w-full h-full text-center  text-white z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center">
+                  <h3 className="mb-2 text-[18px] font-bold">{el.title}</h3>
+                  <span className="text-[14px] text-center p-4">
+                    {el.sublime}
+                  </span>
+                </div>
               </div>
             );
           })}
