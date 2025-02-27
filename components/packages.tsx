@@ -1,12 +1,14 @@
 "use client";
 
 import { BookingForm } from "./form/booking-form";
+import { Gallery } from "./gallery";
 import { Hero } from "./hero";
 import { DestinationCard } from "./ui/destination-card";
 import { DestinationInfo } from "./ui/destination-info";
 import { Tabel } from "./ui/tabel";
 
 export const Packages = ({ destination, allDestinations, settings }: any) => {
+  console.log(destination);
   return (
     <div>
       <Hero blok={destination} />
@@ -15,7 +17,15 @@ export const Packages = ({ destination, allDestinations, settings }: any) => {
         <DestinationInfo destination={destination} />
         <BookingForm />
       </div>
-      <Tabel destination={destination} />
+      {destination.table_columns && destination.table_columns.length > 0 && (
+        <Tabel destination={destination} />
+      )}
+
+      {destination.field &&
+        destination.field.map((item: any) => (
+          <Gallery blok={item} key={item._uid} />
+        ))}
+
       <div className="flex flex-col gap-4 w-[90%] mx-auto lg:py-14">
         <h2 className="text-center text-[30px] capitalize font-normal">
           {settings.destination_title}
