@@ -3,6 +3,7 @@
 import { BookingForm } from "./form/booking-form";
 import { Gallery } from "./gallery";
 import { Hero } from "./hero";
+import { DestinationBlock } from "./ui/destination-block";
 import { DestinationCard } from "./ui/destination-card";
 import { DestinationInfo } from "./ui/destination-info";
 import { Tabel } from "./ui/tabel";
@@ -20,6 +21,11 @@ export const Packages = ({ destination, allDestinations, settings }: any) => {
       {destination.table_columns && destination.table_columns.length > 0 && (
         <Tabel destination={destination} />
       )}
+
+      {destination?.destination_image?.filename &&
+        destination.destination_image.filename !== "" && (
+          <DestinationBlock destination={destination} />
+        )}
 
       {destination.field &&
         destination.field.map((item: any) => (
