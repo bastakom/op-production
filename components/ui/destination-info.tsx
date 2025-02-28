@@ -54,7 +54,7 @@ export const DestinationInfo = ({ destination }: any) => {
       <div>
         <div
           className={`${
-            destination.dropdown_title != ""
+            destination.dropdown_title
               ? "flex items-center justify-between gap-2 bg-[#f8f8f8] p-6 cursor-pointer"
               : "hidden"
           }`}
@@ -72,7 +72,7 @@ export const DestinationInfo = ({ destination }: any) => {
       <div>
         <div
           className={`${
-            destination.second_dropdown_title != ""
+            destination.second_dropdown_title
               ? "flex items-center justify-between gap-2 bg-[#f8f8f8] p-6 cursor-pointer"
               : "hidden"
           }`}
