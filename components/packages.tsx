@@ -1,6 +1,7 @@
 "use client";
 
 import { BookingForm } from "./form/booking-form";
+import { NewsLetterForm } from "./form/news-letter-form";
 import { Gallery } from "./gallery";
 import { Hero } from "./hero";
 import { DestinationBlock } from "./ui/destination-block";
@@ -16,7 +17,7 @@ export const Packages = ({ destination, allDestinations, settings }: any) => {
 
       <div className="grid grid-cols-2 w-[90%] mx-auto gap-12 py-14">
         <DestinationInfo destination={destination} />
-        <BookingForm />
+        <BookingForm selectOption={destination.show_package_option_form} />
       </div>
       {destination.table_columns && destination.table_columns.length > 0 && (
         <Tabel destination={destination} />
@@ -44,6 +45,7 @@ export const Packages = ({ destination, allDestinations, settings }: any) => {
             ))}
         </div>
       </div>
+      <NewsLetterForm settings={settings} />
     </div>
   );
 };

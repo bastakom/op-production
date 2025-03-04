@@ -134,7 +134,7 @@ export const HeaderSection = ({ settings }: any) => {
             {settings.menu.map((el: any, index: number) => {
               return (
                 <Link
-                  href={el.link.cached_url}
+                  href={`/${el.link.cached_url}`}
                   key={index}
                   onClick={() => {
                     setOpenMenu(false);

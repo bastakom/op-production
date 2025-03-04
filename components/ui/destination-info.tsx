@@ -20,9 +20,15 @@ export const DestinationInfo = ({ destination }: any) => {
   return (
     <div className="flex flex-col gap-12">
       <h2 className="-mb-12 pb-4">{destination.destination_title}</h2>
-      <div>{render(destination.destination_info)}</div>
+      <div className="destination-info">
+        {render(destination.destination_info)}
+      </div>
 
-      <div className="flex flex-col gap-4 ">
+      <div
+        className={
+          `${destination.date_title}` !== "" ? "flex flex-col gap-4" : "hidden"
+        }
+      >
         <div className="flex gap-4">
           <span>
             <CiCalendarDate fontSize={30} />

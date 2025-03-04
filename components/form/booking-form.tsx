@@ -1,31 +1,45 @@
 import Link from "next/link";
 import { useState } from "react";
 
-export const BookingForm = () => {
+export const BookingForm = ({ selectOption }: any) => {
   const [formData, setFormData] = useState({
     name: "",
     number: "",
     email: "",
-    message: "",
+    event: "",
+    persons: "",
+    hotel: "",
+    packages: [] as string[],
+    additionalInformation: "",
+    discount: "",
   });
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+
+    if (name === "hotel") {
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+    } else if (name === "packages") {
+      const updatedPackages = formData.packages.includes(value)
+        ? formData.packages.filter((pkg) => pkg !== value)
+        : [...formData.packages, value];
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: updatedPackages,
+      }));
+    } else {
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+    }
   };
 
-  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
@@ -39,13 +53,19 @@ export const BookingForm = () => {
           name: "",
           number: "",
           email: "",
-          message: "",
+          event: "",
+          persons: "",
+          hotel: "",
+          packages: [],
+          additionalInformation: "",
+          discount: "",
         });
       }
     } catch {
       throw new Error("failed");
     }
   };
+
   return (
     <div>
       <h2 className="mb-4">Bokningsförfrågan</h2>
@@ -90,34 +110,101 @@ export const BookingForm = () => {
         </div>
 
         <label htmlFor="event">Match/event*</label>
-        <input type="text" name="event" id="" placeholder="Match/event" />
+        <input
+          type="text"
+          name="event"
+          id="event"
+          placeholder="Match/event"
+          value={formData.event}
+          onChange={handleInputChange}
+        />
         <label htmlFor="persons">Antal personer*</label>
         <input
           type="number"
           name="persons"
-          id=""
+          id="persons"
           placeholder="Antal personer"
+          value={formData.persons}
+          onChange={handleInputChange}
         />
 
-        <label htmlFor="hotel">Hotell*</label>
-        <div className="flex gap-4">
-          <div>
-            <input type="radio" id="yes" name="hotel" value="yes" />
-            <label htmlFor="yes">Ja</label>
-          </div>
-          <div>
-            <input type="radio" id="no" name="hotel" value="no" />
-            <label htmlFor="no">Nej</label>
-          </div>
-        </div>
+        {selectOption ? (
+          <>
+            <label htmlFor="hotel">Paket</label>
+            <div className="flex flex-col gap-4">
+              <div className="flex gap-2 items-center">
+                <input
+                  type="checkbox"
+                  id="packageOne"
+                  name="packages"
+                  value="paket 1"
+                  checked={formData.packages.includes("paket 1")}
+                  onChange={handleInputChange}
+                  className="w-[20px] h-[20px]"
+                />
+                <label htmlFor="packageOne">Paket 1</label>
+              </div>
+              <div className="flex gap-2 items-center">
+                <input
+                  type="checkbox"
+                  id="packageTwo"
+                  name="packages"
+                  value="paket 2"
+                  checked={formData.packages.includes("paket 2")}
+                  onChange={handleInputChange}
+                  className="w-[20px] h-[20px]"
+                />
+                <label htmlFor="packageTwo">Paket 2</label>
+              </div>
+            </div>
+          </>
+        ) : (
+          <>
+            <label htmlFor="hotel">Hotell*</label>
+            <div className="flex gap-4">
+              <div>
+                <input
+                  type="radio"
+                  id="yes"
+                  name="hotel"
+                  value="yes"
+                  checked={formData.hotel === "yes"}
+                  onChange={handleInputChange}
+                />
+                <label htmlFor="yes">Ja</label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="no"
+                  name="hotel"
+                  value="no"
+                  checked={formData.hotel === "no"}
+                  onChange={handleInputChange}
+                />
+                <label htmlFor="no">Nej</label>
+              </div>
+            </div>
+          </>
+        )}
+
         <label htmlFor="additionalInformation">
           Övrig information, tex önskemål enkelrum.
         </label>
-        <input type="text" name="additionalInformation" />
+        <input
+          type="text"
+          name="additionalInformation"
+          value={formData.additionalInformation}
+          onChange={handleInputChange}
+        />
         <label htmlFor="discount">Rabattkod</label>
-        <input type="text" name="discount" />
+        <input
+          type="text"
+          name="discount"
+          value={formData.discount}
+          onChange={handleInputChange}
+        />
         <div>
-          {" "}
           Genom att klicka på skicka godkänner jag OPProductions{" "}
           <Link href={"#"} className="underline">
             policy för behandling av personuppgifter.
