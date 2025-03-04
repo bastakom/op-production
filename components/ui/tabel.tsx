@@ -9,7 +9,6 @@ export const Tabel = ({ destination }: any) => {
     setOpenTable(!openTable);
   };
 
-  console.log(destination);
   return (
     <div className="flex flex-col gap-5">
       <div

@@ -2,9 +2,11 @@ import { render } from "storyblok-rich-text-react-renderer";
 
 export const Tiles = ({ blok }: any) => {
   return (
-    <div className="flex flex-col items-center justify-center gap-4 p-32">
+    <div className="flex flex-col items-center justify-center gap-4 mt-10 lg:p-32 lg:mt-0">
       <h2>{blok.title}</h2>
-      <div className="w-[60%] text-center">{render(blok.content)}</div>
+      <div className="px-4 lg:w-[60%] text-center lg:px-0">
+        {render(blok.content)}
+      </div>
     </div>
   );
 };

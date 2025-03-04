@@ -10,12 +10,11 @@ import { DestinationInfo } from "./ui/destination-info";
 import { Tabel } from "./ui/tabel";
 
 export const Packages = ({ destination, allDestinations, settings }: any) => {
-  console.log(destination);
   return (
     <div>
       <Hero blok={destination} />
 
-      <div className="grid grid-cols-2 w-[90%] mx-auto gap-12 py-14">
+      <div className="grid grid-cols-1 lg:grid-cols-2 w-[90%] mx-auto gap-12 py-14">
         <DestinationInfo destination={destination} />
         <BookingForm selectOption={destination.show_package_option_form} />
       </div>

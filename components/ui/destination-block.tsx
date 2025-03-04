@@ -10,8 +10,6 @@ export const DestinationBlock = ({ destination }: any) => {
     setOpenDropdown(!openDropdown);
   };
 
-  console.log(openDropdown);
-  console.log("heeeej", destination);
   return (
     <>
       <div className="flex flex-col gap-5">

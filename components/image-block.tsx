@@ -3,9 +3,9 @@ import { render } from "storyblok-rich-text-react-renderer";
 
 export const ImageBlock = ({ blok }: any) => {
   return (
-    <div className=" grid grid-cols-2 ">
+    <div className=" grid grid-cols-1 lg:grid-cols-2 ">
       <div
-        className={`flex flex-col justify-center p-12 px-20 ${
+        className={`flex flex-col justify-center p-4 lg:p-12 lg:px-20 ${
           blok.image_left && "imageLeft"
         }`}
       >
