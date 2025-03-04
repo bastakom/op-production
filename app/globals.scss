@@ -150,6 +150,12 @@ td:last-of-type {
   text-align: end;
 }
 
+.destination-info {
+  a {
+    text-decoration: underline;
+  }
+}
+
 /* Footer */
 footer {
   background-color: #004e70;

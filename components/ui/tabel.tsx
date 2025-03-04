@@ -1,5 +1,6 @@
 import { BsPlusLg } from "react-icons/bs";
 import { useState } from "react";
+import { render } from "storyblok-rich-text-react-renderer";
 
 export const Tabel = ({ destination }: any) => {
   const [openTable, setOpenTable] = useState(false);
@@ -8,6 +9,7 @@ export const Tabel = ({ destination }: any) => {
     setOpenTable(!openTable);
   };
 
+  console.log(destination);
   return (
     <div className="flex flex-col gap-5">
       <div
@@ -19,42 +21,47 @@ export const Tabel = ({ destination }: any) => {
         </h2>
         <BsPlusLg fontSize={30} color="#004e70" />
       </div>
-      {destination.table_columns.map((column: any) => (
-        <div
-          key={column._uid}
-          className={
-            openTable ? "grid grid-cols-2 w-[70%] mx-auto gap-4" : "hidden"
-          }
-        >
-          {column.field.map((fieldItem: any) => (
-            <table key={fieldItem._uid}>
-              {fieldItem.caption &&
-                fieldItem.caption.map((captionItem: any) => (
-                  <caption key={captionItem._uid}>{captionItem.title}</caption>
-                ))}
-
-              <tbody>
-                <tr>
-                  {fieldItem.header &&
-                    fieldItem.header.map((headerItem: any) => (
-                      <th key={headerItem._uid} className="px-10">
-                        {headerItem.title}
-                      </th>
-                    ))}
-                </tr>
-                <tr>
-                  {fieldItem.body &&
-                    fieldItem.body.map((bodyItem: any) => (
-                      <td key={bodyItem._uid} className="px-10">
-                        {bodyItem.title}
-                      </td>
-                    ))}
-                </tr>
-              </tbody>
-            </table>
-          ))}
+      <div className="w-[70%] mx-auto">
+        <div className={openTable ? "block mb-10" : "hidden"}>
+          {render(destination.main_content)}
         </div>
-      ))}
+        {destination.table_columns.map((column: any) => (
+          <div
+            key={column._uid}
+            className={openTable ? "grid grid-cols-2  gap-4" : "hidden"}
+          >
+            {column.field.map((fieldItem: any) => (
+              <table key={fieldItem._uid}>
+                {fieldItem.caption &&
+                  fieldItem.caption.map((captionItem: any) => (
+                    <caption key={captionItem._uid}>
+                      {captionItem.title}
+                    </caption>
+                  ))}
+
+                <tbody>
+                  <tr>
+                    {fieldItem.header &&
+                      fieldItem.header.map((headerItem: any) => (
+                        <th key={headerItem._uid} className="px-10">
+                          {headerItem.title}
+                        </th>
+                      ))}
+                  </tr>
+                  <tr>
+                    {fieldItem.body &&
+                      fieldItem.body.map((bodyItem: any) => (
+                        <td key={bodyItem._uid} className="px-10">
+                          {bodyItem.title}
+                        </td>
+                      ))}
+                  </tr>
+                </tbody>
+              </table>
+            ))}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
