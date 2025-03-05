@@ -22,7 +22,11 @@ export const FooterSection = ({ settings }: any) => {
       <div className="mt-10 lg:mt-0 flex flex-col gap-4">
         <h3>{settings.terms_title}</h3>
         {settings.terms_links.map((el: any) => (
-          <Link href={el.link.cached_url} key={el._uid} className="text-[14px]">
+          <Link
+            href={`/${el.link.cached_url}`}
+            key={el._uid}
+            className="text-[14px]"
+          >
             {el.link_title}
           </Link>
         ))}
