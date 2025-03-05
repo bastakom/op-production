@@ -35,11 +35,14 @@ export const Hero = ({ blok }: any) => {
       )}
       <div
         className={`absolute top-[30%] lg:top-[30%] text-white flex flex-col lg:justify-center lg:items-center lg:gap-4 z-20 text-center lg:text-start ${
-          !blok.video && "left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+          !blok.video &&
+          "left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[70%] lg:w-[100%]"
         }`}
       >
-        <h1>{blok.hero_title}</h1>
-        <div className="hero-text">{render(blok.content)}</div>
+        <h1 className="text-[40px] lg:text-[50px] ">{blok.hero_title}</h1>
+        <div className="hero-text mx-auto mt-4 lg:mt-0">
+          {render(blok.content)}
+        </div>
       </div>
     </div>
   );

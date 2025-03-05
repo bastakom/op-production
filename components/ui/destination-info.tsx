@@ -67,7 +67,11 @@ export const DestinationInfo = ({ destination }: any) => {
           onClick={() => handleDropdown()}
         >
           <h2>{destination.dropdown_title}</h2>
-          <IoIosArrowDown fontSize={25} color="#004e70" />
+          <IoIosArrowDown
+            fontSize={25}
+            color="#004e70"
+            className={`${openDropdown ? "rotate-180" : ""}`}
+          />
         </div>
         {openDropdown && (
           <div className="mt-6 destination-info">
@@ -85,7 +89,11 @@ export const DestinationInfo = ({ destination }: any) => {
           onClick={() => handleSecondDropdown()}
         >
           <h2>{destination.second_dropdown_title}</h2>
-          <IoIosArrowDown fontSize={25} color="#004e70" />
+          <IoIosArrowDown
+            fontSize={25}
+            color="#004e70"
+            className={`${openSecondDropdown ? "rotate-180" : ""}`}
+          />
         </div>
         {openSecondDropdown && (
           <div className="mt-6 destination-info">

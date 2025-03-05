@@ -93,7 +93,14 @@ export const HeaderSection = ({ settings }: any) => {
       className={`absolute px-5 top-0 flex  items-center w-full py-5 z-50`}
     >
       <Link href="/" className="flex justify-center text-white">
-        <Image src={settings.logo.filename} width={131} height={50} alt="" />
+        <div className="relative w-[90px] h-[90px] lg:w-[130px] lg:h-[130px]">
+          <Image
+            src={settings.logo.filename}
+            alt=""
+            fill
+            className="object-contain"
+          />
+        </div>
       </Link>
       <div className={`flex justify-end fixed right-5 top-2`}>
         <TbMenu

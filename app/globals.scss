@@ -43,7 +43,7 @@ div {
 /* Hero-section */
 .hero-text {
   font-weight: 700;
-  width: 100%;
+  width: 95%;
   line-height: 2rem;
 }
 
@@ -61,7 +61,7 @@ div {
 }
 
 .imageLeft {
-  order: 2;
+  order: 2 !important;
 }
 
 .buttonRounded {
@@ -155,7 +155,11 @@ td:last-of-type {
     text-decoration: underline;
   }
 }
-
+.tiles-content {
+  a {
+    text-decoration: underline;
+  }
+}
 /* Footer */
 footer {
   background-color: #004e70;

@@ -14,9 +14,17 @@ export const Packages = ({ destination, allDestinations, settings }: any) => {
     <div>
       <Hero blok={destination} />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 w-[90%] mx-auto gap-12 py-14">
+      <div
+        className={`grid gap-12 py-14 ${
+          destination.hide_booking_form
+            ? "grid-cols-1 w-[90%] lg:w-[70%] mx-auto -mb-20"
+            : "grid-cols-1 lg:grid-cols-2 w-[90%] mx-auto"
+        }`}
+      >
         <DestinationInfo destination={destination} />
-        <BookingForm selectOption={destination.show_package_option_form} />
+        {destination.hide_booking_form ? null : (
+          <BookingForm selectOption={destination.show_package_option_form} />
+        )}
       </div>
       {destination.table_columns && destination.table_columns.length > 0 && (
         <Tabel destination={destination} />
@@ -32,7 +40,7 @@ export const Packages = ({ destination, allDestinations, settings }: any) => {
           <Gallery blok={item} key={item._uid} />
         ))}
 
-      <div className="flex flex-col gap-4 w-[90%] mx-auto lg:py-14">
+      <div className="flex flex-col gap-4 w-[90%] mx-auto lg:py-14 mt-5 lg:mt-0">
         <h2 className="text-center text-[30px] capitalize font-normal">
           {settings.destination_title}
         </h2>
