@@ -36,7 +36,7 @@ export const Packages = ({ destination, allDestinations, settings }: any) => {
           <DestinationBlock destination={destination} />
         )}
 
-      {destination.image_gallery && (
+      {destination?.image_gallery && (
         <Gallery blok={destination.image_gallery} />
       )}
 

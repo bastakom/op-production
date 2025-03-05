@@ -20,7 +20,7 @@ export const Gallery = ({ blok }: any) => {
     <div className="lg:py-10 mb-10 lg:mb-0">
       <div className="flex justify-center mt-16 lg:mt-20 mr-auto">
         <div className="md:grid md:grid-cols-2 lg:grid-cols-4 gap-2 max-w-[100%]">
-          {blok.slice(0, visibleImages).map((el: any, index: number) => {
+          {blok?.slice(0, visibleImages).map((el: any, index: number) => {
             return (
               <div
                 key={index}
