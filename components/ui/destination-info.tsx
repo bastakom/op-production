@@ -4,10 +4,13 @@ import { CiLocationOn } from "react-icons/ci";
 import { IoTicketOutline } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 export const DestinationInfo = ({ destination }: any) => {
   const [openDropdown, setOpenDropdown] = useState(false);
   const [openSecondDropdown, setOpenSecondDropdown] = useState(false);
+  const [openSkysportDropdown, setOpenSkysportDropdown] = useState(false);
 
   const handleDropdown = () => {
     setOpenDropdown(!openDropdown);
@@ -15,6 +18,10 @@ export const DestinationInfo = ({ destination }: any) => {
 
   const handleSecondDropdown = () => {
     setOpenSecondDropdown(!openSecondDropdown);
+  };
+
+  const handleSkysportDropdown = () => {
+    setOpenSkysportDropdown(!openSkysportDropdown);
   };
 
   return (
@@ -98,6 +105,39 @@ export const DestinationInfo = ({ destination }: any) => {
         {openSecondDropdown && (
           <div className="mt-6 destination-info">
             {render(destination.second_dropdown)}
+          </div>
+        )}
+      </div>
+      <div>
+        <div
+          className={`${
+            destination.skysport_dropdown_title
+              ? "flex items-center justify-between gap-2 bg-[#f8f8f8] p-6 cursor-pointer"
+              : "hidden"
+          }`}
+          onClick={() => handleSkysportDropdown()}
+        >
+          <h2>{destination.skysport_dropdown_title}</h2>
+          <IoIosArrowDown
+            fontSize={25}
+            color="#004e70"
+            className={`${openSkysportDropdown ? "rotate-180" : ""}`}
+          />
+        </div>
+        {openSkysportDropdown && (
+          <div className="flex mt-5 flex-wrap gap-4 mx-auto">
+            {destination.skysport_logos.map((item: any) => (
+              <div className="relative w-[130px] h-[130px]" key={item.id}>
+                <Link href={item.name}>
+                  <Image
+                    src={item.filename}
+                    alt={item.alt}
+                    fill
+                    className="object-contain"
+                  />
+                </Link>
+              </div>
+            ))}
           </div>
         )}
       </div>
