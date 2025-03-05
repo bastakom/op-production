@@ -206,7 +206,7 @@ export const BookingForm = ({ selectOption }: any) => {
         />
         <div>
           Genom att klicka på skicka godkänner jag OPProductions{" "}
-          <Link href={"#"} className="underline">
+          <Link href={"/integritetspolicy"} className="underline">
             policy för behandling av personuppgifter.
           </Link>
         </div>
