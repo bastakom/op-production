@@ -161,8 +161,8 @@ export const BookingForm = ({ selectOption }: any) => {
         ) : (
           <>
             <label htmlFor="hotel">Hotell*</label>
-            <div className="flex gap-4">
-              <div>
+            <div className="flex items-center gap-4">
+              <div className="flex items-center lg:gap-2">
                 <input
                   type="radio"
                   id="yes"
@@ -173,7 +173,7 @@ export const BookingForm = ({ selectOption }: any) => {
                 />
                 <label htmlFor="yes">Ja</label>
               </div>
-              <div>
+              <div className="flex items-center lg:gap-2">
                 <input
                   type="radio"
                   id="no"
