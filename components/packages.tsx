@@ -10,6 +10,7 @@ import { DestinationInfo } from "./ui/destination-info";
 import { Tabel } from "./ui/tabel";
 
 export const Packages = ({ destination, allDestinations, settings }: any) => {
+  console.log(destination);
   return (
     <div>
       <Hero blok={destination} />
@@ -35,10 +36,9 @@ export const Packages = ({ destination, allDestinations, settings }: any) => {
           <DestinationBlock destination={destination} />
         )}
 
-      {destination.field &&
-        destination.field.map((item: any) => (
-          <Gallery blok={item} key={item._uid} />
-        ))}
+      {destination.image_gallery && (
+        <Gallery blok={destination.image_gallery} />
+      )}
 
       <div className="flex flex-col gap-4 w-[90%] mx-auto lg:py-14 mt-5 lg:mt-0">
         <h2 className="text-center text-[30px] capitalize font-normal">
