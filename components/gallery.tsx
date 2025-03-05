@@ -19,12 +19,12 @@ export const Gallery = ({ blok }: any) => {
   return (
     <div className="lg:py-10 mb-10 lg:mb-0">
       <div className="flex justify-center mt-16 lg:mt-20 mr-auto">
-        <div className="lg:grid grid-cols-4 gap-2 max-w-[100%]">
+        <div className="md:grid md:grid-cols-2 lg:grid-cols-4 gap-2 max-w-[100%]">
           {blok.images.slice(0, visibleImages).map((el: any, index: number) => {
             return (
               <div
                 key={index}
-                className="relative !w-[90vw] mb-4 lg:mb-0 lg:!w-[21.8vw] min-h-[50vh] group"
+                className="relative !w-[90vw] md:!w-[45vw] mb-4 lg:mb-0 lg:!w-[21.8vw] min-h-[50vh] group"
                 style={{
                   height: "300px",
                 }}

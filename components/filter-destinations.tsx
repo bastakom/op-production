@@ -10,7 +10,7 @@ export const FilterDestinations = ({ blok, allDestinations }: any) => {
       <h2 className="text-center text-[30px] uppercase font-normal mb-4">
         {blok.section_title}
       </h2>
-      <div className="lg:grid grid-cols-4 gap-4 ">
+      <div className="md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 ">
         {filterCategory.map((item: any, index: number) => (
           <DestinationCard item={item} boolean={false} key={index} />
         ))}
