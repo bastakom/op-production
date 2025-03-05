@@ -44,7 +44,7 @@ export const Packages = ({ destination, allDestinations, settings }: any) => {
         <h2 className="text-center text-[30px] capitalize font-normal">
           {settings.destination_title}
         </h2>
-        <div className="lg:grid grid-cols-4 gap-4">
+        <div className="md:grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {allDestinations
             .filter((item: any) => item.content.category.includes("popular"))
             .map((item: any, index: number) => (

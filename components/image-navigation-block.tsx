@@ -5,7 +5,7 @@ export const ImageNavigationBlock = ({ blok }: any) => {
   return (
     <div className="flex flex-col items-center justify-center py-10 pb-20 lg:w-[90%] lg:mx-auto">
       <h2 className="mb-4 lg:mb-8 text-[30px] font-normal">{blok.title}</h2>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 justify-center ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center ">
         {blok.image_block.map((el: any) => (
           <Link
             href={el.link.cached_url}

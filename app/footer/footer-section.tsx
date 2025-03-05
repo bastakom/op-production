@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export const FooterSection = ({ settings }: any) => {
   return (
-    <footer className="text-center lg:text-start grid lg:grid-cols-3 p-10 lg:p-24 lg:pb-4">
+    <footer className="text-center lg:text-start grid md:grid-cols-3 p-10 lg:p-24 lg:pb-4">
       <div>
         {settings.contact.map((el: any) => (
           <div key={el._uid} className="flex flex-col gap-4 ">
@@ -33,7 +33,7 @@ export const FooterSection = ({ settings }: any) => {
         ))}
       </div>
 
-      <div className="mt-4 justify-center lg:mt-0 flex lg:justify-end lg:w-[85vw] w-[100%]">
+      <div className="mt-4 justify-center lg:mt-0 flex md:justify-end md:w-[85vw] w-[100%]">
         <div className="flex flex-row relative justify-center lg:justify-start w-[100px] h-[100px]">
           <Image
             src={settings.swish_logo.filename}
