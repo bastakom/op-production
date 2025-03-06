@@ -3,6 +3,7 @@ import { getDestination } from "@/lib/get-destination";
 import { getData } from "@/lib/get-data";
 import { getAllDestinations } from "@/lib/get-all-destinations";
 import { getSettings } from "@/lib/get-settings";
+import { Metadata } from "next";
 
 const page = async ({ params }: { params: { slug: string } }) => {
   const pathname = (await params).slug;
@@ -19,6 +20,32 @@ const page = async ({ params }: { params: { slug: string } }) => {
       />
     </div>
   );
+};
+
+export const generateMetadata = async ({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> => {
+  const pathname = (await params).slug;
+  const slugName = pathname;
+
+  const destination = await getDestination(pathname);
+
+  if (!destination) {
+    return {
+      title: "OP Productions",
+      description: "Default description",
+    };
+  }
+
+  return {
+    title:
+      destination?.data?.data?.story?.content?.seo?.title || "OP Productions",
+    description:
+      destination?.data?.data?.story?.content?.seo?.description ||
+      "Default description",
+  };
 };
 
 export default page;
