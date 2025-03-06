@@ -22,7 +22,7 @@ export const generateMetadata = async ({
 }: {
   params: { slug: string };
 }): Promise<Metadata> => {
-  const pathname = params.slug || "home";
+  const pathname = (await params).slug;
   const slugName = pathname;
 
   const data = await getData(slugName);
