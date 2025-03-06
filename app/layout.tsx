@@ -4,6 +4,7 @@ import { StoryblokProvider } from "@/components/StoryblokProvider";
 import { apiPlugin, storyblokInit } from "@storyblok/react";
 import { Header } from "./header/header";
 import { Footer } from "./footer/footer";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -30,6 +31,15 @@ export default function RootLayout({
           <Header />
           {children}
           <Footer />
+          <Script src="https://consent.cookiebot.com/uc.js" />
+          <script
+            id="Cookiebot"
+            src="https://consent.cookiebot.com/uc.js"
+            data-cbid="47e00487-0232-4f18-803f-d6ad9aa35571"
+            data-blockingmode="manual"
+            type="text/javascript"
+            async
+          ></script>
         </body>
       </html>
     </StoryblokProvider>
