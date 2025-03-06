@@ -10,7 +10,6 @@ import { DestinationInfo } from "./ui/destination-info";
 import { Tabel } from "./ui/tabel";
 
 export const Packages = ({ destination, allDestinations, settings }: any) => {
-  console.log(destination);
   return (
     <div>
       <Hero blok={destination} />

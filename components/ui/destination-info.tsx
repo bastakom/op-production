@@ -64,7 +64,7 @@ export const DestinationInfo = ({ destination }: any) => {
           </div>
         </div>
       </div>
-      <div>
+      <div className={`${destination.dropdown_title ? "block" : "hidden"}`}>
         <div
           className={`${
             destination.dropdown_title
@@ -86,7 +86,7 @@ export const DestinationInfo = ({ destination }: any) => {
           </div>
         )}
       </div>
-      <div>
+      <div className={`${destination.dropdown_title ? "block" : "hidden"}`}>
         <div
           className={`${
             destination.second_dropdown_title
@@ -111,13 +111,13 @@ export const DestinationInfo = ({ destination }: any) => {
       <div>
         <div
           className={`${
-            destination.skysport_dropdown_title
+            destination.tournament_dropdown_title
               ? "flex items-center justify-between gap-2 bg-[#f8f8f8] p-6 cursor-pointer"
               : "hidden"
           }`}
           onClick={() => handleSkysportDropdown()}
         >
-          <h2>{destination.skysport_dropdown_title}</h2>
+          <h2>{destination.tournament_dropdown_title}</h2>
           <IoIosArrowDown
             fontSize={25}
             color="#004e70"
@@ -125,19 +125,27 @@ export const DestinationInfo = ({ destination }: any) => {
           />
         </div>
         {openSkysportDropdown && (
-          <div className="flex mt-5 flex-wrap gap-4 mx-auto">
-            {destination.skysport_logos.map((item: any) => (
-              <div className="relative w-[130px] h-[130px]" key={item.id}>
-                <Link href={item.name}>
-                  <Image
-                    src={item.filename}
-                    alt={item.alt}
-                    fill
-                    className="object-contain"
-                  />
-                </Link>
-              </div>
-            ))}
+          <div>
+            <div className="mt-4 mb-10">
+              {render(destination.tournament_content)}
+            </div>
+            <div className="flex mt-5 flex-wrap gap-4 mx-auto">
+              {destination.tournament_logos.map((item: any) => (
+                <div
+                  className="relative w-[100px] lg:w-[130px] h-[130px]"
+                  key={item.id}
+                >
+                  <Link href={item.name}>
+                    <Image
+                      src={item.filename}
+                      alt={item.alt}
+                      fill
+                      className="object-contain"
+                    />
+                  </Link>
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </div>
