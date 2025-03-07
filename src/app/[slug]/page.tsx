@@ -2,6 +2,7 @@ import { getAllDestinations } from "@/lib/get-all-destinations";
 import { getData } from "@/lib/get-data";
 import { StoryblokStory } from "@storyblok/react/rsc";
 import { Metadata } from "next";
+//test
 
 type Params = Promise<{ slug: string }>;
 const Page = async ({ params }: { params: Params }) => {
