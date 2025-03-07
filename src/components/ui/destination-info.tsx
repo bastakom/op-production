@@ -86,7 +86,9 @@ export const DestinationInfo = ({ destination }: any) => {
           </div>
         )}
       </div>
-      <div className={`${destination.dropdown_title ? "block" : "hidden"}`}>
+      <div
+        className={`${destination.second_dropdown_title ? "block" : "hidden"}`}
+      >
         <div
           className={`${
             destination.second_dropdown_title
@@ -108,7 +110,11 @@ export const DestinationInfo = ({ destination }: any) => {
           </div>
         )}
       </div>
-      <div>
+      <div
+        className={`${
+          destination.tournament_dropdown_title ? "block" : "hidden"
+        }`}
+      >
         <div
           className={`${
             destination.tournament_dropdown_title
