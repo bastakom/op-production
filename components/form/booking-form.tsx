@@ -212,7 +212,7 @@ export const BookingForm = ({ selectOption }: any) => {
         </div>
 
         <button
-          className="w-[128px] h-[50px] text-[14px] bg-[#28303d] text-white mt-4"
+          className="w-[128px] h-[50px] text-[14px] bg-[#28303d] text-white mt-4 border-2 border-transparent hover:text-[#28303d] hover:bg-white hover:border-[#28303d]"
           type="submit"
         >
           Skicka
