@@ -84,13 +84,20 @@ div {
 }
 
 .destination-content {
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+
   p {
     &::before {
       content: "✓";
       top: 2px;
       background-color: #052f63;
       color: white;
-      padding: 2px 6px;
+      padding: 4px 6px;
       border-radius: 100%;
       font-size: 10px;
       margin-right: 10px;
@@ -189,5 +196,16 @@ footer {
     line-height: 2rem;
     text-align: center;
     justify-content: flex-start;
+  }
+
+  .destination-content {
+    p {
+      &::before {
+        content: "✓";
+
+        color: white;
+        padding: 2px 6px;
+      }
+    }
   }
 }
